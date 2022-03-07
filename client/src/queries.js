@@ -37,6 +37,6 @@ export const REMOVE_PERSON = gql`
       id
       firstName
       lastName
-    
+    }
   }
 `
