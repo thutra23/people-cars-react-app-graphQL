@@ -22,7 +22,7 @@ const RemovePerson = ({id, firstName, lastName}) =>{
     const handleButtonClick = () => {
         let result = window.confirm('Are you sure you want to delete this person?'); 
         if (result) {
-            removePerson(({
+            removePerson({
                 variables: {
                     id
                 }, 
@@ -35,7 +35,7 @@ const RemovePerson = ({id, firstName, lastName}) =>{
                         lastName
                     }
                 }
-            }));
+            });
         }
     }
     

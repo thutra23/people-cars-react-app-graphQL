@@ -3,9 +3,11 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Title from './components/layout/Title';
 import PersonForm from './components/forms/PersonForm';
 import People from './components/lists/People';
+import CarForm from './components/forms/CarForm'
+
 
 const client = new ApolloClient({
-  uri:'http://localhost:4000/graphql', 
+  uri:'http://localhost:4001/graphql', 
   cache: new InMemoryCache()
 });
 
@@ -15,6 +17,7 @@ const App = () =>(
      <Title />
      <PersonForm />
      <People />
+     <CarForm />
     </div>
   </ApolloProvider>
  

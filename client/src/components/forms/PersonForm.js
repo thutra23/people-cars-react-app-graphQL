@@ -27,9 +27,9 @@ const PersonForm = () =>{
             }, 
 
             optimisticResponse: {
-                __typeName: 'Mutation',
+                __typename: 'Mutation',
                 addPerson: {
-                __type: 'Person', 
+                __typename: 'Person', 
                 id, 
                 firstName, 
                 lastName
@@ -78,13 +78,11 @@ const PersonForm = () =>{
                     <Button 
                     type='primary'
                      htmlType='submit'
-                     disabled={!form.isFieldsTouched(true) || form.getFieldError().filter(({errors})=>errors.length).length}
+                     disabled={!form.isFieldsTouched(true) || form.getFieldsError().filter(({errors})=>errors.length).length}
 
                     >Add Person</Button>
                 )}
             </Form.Item>
-
-          
         </Form>
     )
 }

@@ -55,21 +55,18 @@ const Person = props =>{
                   <Card 
                   style={styles.card}
                   actions={
-                     [ <EditOutlined key='edit' onClick={handleButtonClick}/>,  <RemovePerson id={id} firstName={firstName} lastName={lastName}/>]
+                     [ <EditOutlined key='edit' onClick={handleButtonClick}/>,  <RemovePerson
+                     id={id} firstName={firstName} 
+                     lastName={lastName}/>]
                   }
-                  
                   >
                   {firstName}{lastName}
           
                   </Card>
-
             )
-          
-                
             }
            
         </div>
-       
     )
 }
 

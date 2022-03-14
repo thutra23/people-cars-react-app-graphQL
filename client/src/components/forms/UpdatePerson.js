@@ -63,18 +63,20 @@ const UpdatePerson = props =>{
         name='update-person-form' 
         layout='inline'
         size='large'
+       
         >
             <Form.Item
              name="firstName"
              rules={[{required: true, message: "Please input your first name!"}]}
             >
-                <Input placeholder='i.e. John' />
+                <Input placeholder='i.e. John' onChange={e => updateStateVariable('firstName', e.target.value)}  />
             </Form.Item>
+            
             <Form.Item
             name="lastName"
             rules={[{required: true, message: "Please input your last name!"}]}
             >
-                <Input placeholder='i.e. Smith' onChange={e => updateStateVariable('firstName', e.target.value)} />
+                <Input placeholder='i.e. Smith' onChange={e => updateStateVariable('lastName', e.target.value)} />
             </Form.Item> 
 
             <Form.Item shouldUpdate={true}> 
@@ -83,7 +85,7 @@ const UpdatePerson = props =>{
                     type='primary'
                      htmlType='submit'
                      disabled={(!form.isFieldTouched('firstName') && !form.isFieldTouched('lastName'))
-                        || form.getFieldError().filter(({errors})=>errors.length).length}
+                        || form.getFieldsError().filter(({errors})=>errors.length).length}
 
                     >Update Person</Button>
                 )}

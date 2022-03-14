@@ -30,6 +30,7 @@ const people = [
       price: '40000',
       personId: '1'
     },
+    
     {
       id: '2',
       year: '2018',
@@ -38,6 +39,7 @@ const people = [
       price: '13000',
       personId: '1'
     },
+
     {
       id: '3',
       year: '2017',
@@ -46,6 +48,7 @@ const people = [
       price: '20000',
       personId: '1'
     },
+
     {
       id: '4',
       year: '2019',
@@ -54,6 +57,7 @@ const people = [
       price: '60000',
       personId: '2'
     },
+
     {
       id: '5',
       year: '2018',
@@ -62,6 +66,7 @@ const people = [
       price: '35000',
       personId: '2'
     },
+
     {
       id: '6',
       year: '2017',
@@ -70,6 +75,7 @@ const people = [
       price: '45000',
       personId: '2'
     },
+
     {
       id: '7',
       year: '2019',
@@ -78,6 +84,7 @@ const people = [
       price: '40000',
       personId: '3'
     },
+
     {
       id: '8',
       year: '2018',
@@ -86,6 +93,7 @@ const people = [
       price: '45000',
       personId: '3'
     },
+
     {
       id: '9',
       year: '2017',
@@ -141,8 +149,6 @@ const people = [
           car(parent, args, context, info) {
               return find(cars, {id: args.id});
           }
-
-          
       },
 
       Mutation: {
@@ -212,6 +218,8 @@ const people = [
               remove(people, c => {
                 return c.id == removedPerson.id
               })
+              
+              return removedPerson
           }, 
 
           removeCar(parent, args, context, info) {
