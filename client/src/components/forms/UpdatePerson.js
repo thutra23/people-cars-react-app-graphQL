@@ -54,7 +54,6 @@ const UpdatePerson = props =>{
         }
     }
 
-    
     return (
         <Form 
         initialValues={{firstName: firstName, lastName: lastName}}
@@ -71,7 +70,7 @@ const UpdatePerson = props =>{
             >
                 <Input placeholder='i.e. John' onChange={e => updateStateVariable('firstName', e.target.value)}  />
             </Form.Item>
-            
+
             <Form.Item
             name="lastName"
             rules={[{required: true, message: "Please input your last name!"}]}

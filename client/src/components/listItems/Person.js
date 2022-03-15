@@ -3,6 +3,9 @@ import { EditOutlined } from '@ant-design/icons';
 import { useState } from "react";
 import UpdatePerson from "../forms/UpdatePerson";
 import RemovePerson from "../buttons/RemovePerson";
+import { GET_CARS } from "../../queriesCars";
+import { useQuery } from "@apollo/client";
+import Car from "./Car";
 
 const getStyles = () => ({
     card: {
@@ -16,6 +19,7 @@ const Person = props =>{
     const [firstName, setFirstName] = useState(props.firstName);
     const [lastName, setLastName] = useState(props.lastName);
     const [editMode, setEditMode] = useState(false);
+    const {data} = useQuery(GET_CARS);
 
     const styles = getStyles();
 
@@ -37,6 +41,9 @@ const Person = props =>{
             break;
         }
     }
+
+
+    
  
     return (
 
@@ -61,6 +68,18 @@ const Person = props =>{
                   }
                   >
                   {firstName}{lastName}
+
+
+                  {/* render car card */}
+                  {data?.cars.map(car => {
+                      if (car.personId === id)  {
+                          return (
+                              <Car key={car.id} id={car.id} year={car.year} make={car.make} model={car.model} price={car.price} personId={car.personId} />
+                          )
+                      } else {
+                          return null
+                      }
+                  })}
           
                   </Card>
             )

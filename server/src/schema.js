@@ -167,10 +167,10 @@ const people = [
           addCar(parent, args, context, info) {
               const newCar = {
                   id: args.id, 
+                  year: args.year,
                   make: args.make,
                   model: args.model, 
                   price: args.price, 
-                  year: args.year,
                   personId: args.personId
               }
 
@@ -193,7 +193,7 @@ const people = [
              
           }, 
 
-          updateCar(parent, agrs, context, info) {
+          updateCar(parent, args, context, info) {
               const car = find(cars, {id: args.id})
 
               if(!car) {
@@ -218,7 +218,7 @@ const people = [
               remove(people, c => {
                 return c.id == removedPerson.id
               })
-              
+
               return removedPerson
           }, 
 
@@ -231,6 +231,8 @@ const people = [
               remove(cars, c => {
                   return c.id == removedCar.id
               })
+
+              return removedCar
           }
       }
   }
