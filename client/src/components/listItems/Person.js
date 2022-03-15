@@ -67,7 +67,7 @@ const Person = props =>{
                      lastName={lastName}/>]
                   }
                   >
-                  {firstName}{lastName}
+                  {firstName} {lastName}
 
 
                   {/* render car card */}
